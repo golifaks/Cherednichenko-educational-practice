@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Сборщик контента</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1 class="main-title">
+            <span> Сборщик контента</span>
+        </h1>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">🔍</span>
+                Поиск по ключевому слову
+            </div>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="keywordInput" 
+                    class="input-field" 
+                    placeholder="Введите ключевое слово (javascript, nodejs, react...)"
+                    autocomplete="off"
+                />
+                <button id="searchBtn" class="btn btn-primary">
+                     Найти URL
+                </button>
+            </div>
+            <div id="urlContainer"></div>
+        </div>
+
+        <div class="card" id="downloadStatus" style="display:none;">
+            <div class="card-title">
+                <span class="icon">📥</span>
+                Статус загрузки
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill">0%</div>
+                </div>
+                <div class="progress-text">
+                    <span id="progressText">0%</span>
+                    <span id="progressSize">~2 KB</span>
+                </div>
+            </div>
+            <div class="status-message" id="statusMessage">
+                 Ожидание начала загрузки...
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <span class="icon">📂</span>
+                Сохранённый контент
+                <button id="clearAllBtn" class="btn btn-danger btn-small" style="margin-left:auto;">
+                     Очистить всё
+                </button>
+            </div>
+            <div id="savedList"></div>
+            <div id="contentViewer" class="content-viewer"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
